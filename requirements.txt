@@ -1,0 +1,4 @@
+deep-translator==1.5.6
+gTTS==2.2.2
+speechrecognition==3.8.1
+
