@@ -46,7 +46,7 @@ def translate_speech(english_speech):
                 list2.append(key_list[position])
         pai = ' '.join(list2)
         speak = gTTS(text=pai, lang=to_lang, slow=False)
-        speak.save("/home/chaithanyakumar/mysite/static/captured_voicenew.mp3")
+        speak.save("captured_voicenew.mp3")
         os.system("start captured_voice.mp3")
         return pai
     except spr.UnknownValueError:
