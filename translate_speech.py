@@ -5,6 +5,8 @@ import os
 
 import csv
 
+from grammar_correction import correct_sentence
+
 def translate_speech(english_speech):
 
     d = {}
@@ -18,7 +20,9 @@ def translate_speech(english_speech):
     to_lang = 'hi'
     try:
 
-        text_to_translate = GoogleTranslator(source='en', target='hi').translate(english_speech)
+        corrected_input = correct_sentence(english_speech)
+
+        text_to_translate = GoogleTranslator(source='en', target='hi').translate(corrected_input)
         text = text_to_translate
         text1 = text.split()
         test = []
