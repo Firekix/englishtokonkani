@@ -20,6 +20,8 @@ This project is an English to Konkani translator that employs a pivot language, 
 
 - [@Chaithanya Kumar](https://github.com/chaithanyakumar47)
 - [@Ashwin M Pai](https://github.com/ashwinmpaii)
+- @[Chemnad Abdul Nassir Shazin](https://github.com/canshazin)
+  
 
 
 ## Installation
