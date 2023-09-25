@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruits</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+    body {
+
+        font-family: "Montserrat", sans-serif;
+
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        background: #a8e5ae;
+      }
+      .back-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        background: rgb(100, 100, 242);
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      h1 {
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: auto;
+        font-family: Arial, sans-serif;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        background: #3bc548;
+      }
+
+      th {
+        background-color: #dddddd;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a class="back-btn" href="{{ url_for('Dictionary') }}">Back</a>
+      <h1>vegetables</h1>
+      <table>
+        <tr>
+          <th>English</th>
+          <th>Konkani</th>
+        </tr>
+        <tr>
+          <td>Bitter Gourd</td>
+          <td>Karaathe</td>
+        </tr>
+        <tr>
+          <td>Ash Gourd</td>
+          <td>Kuvaale</td>
+        </tr>
+        <tr>
+          <td>Pumpkin</td>
+          <td>Duddi</td>
+        </tr>
+        <tr>
+          <td>Ladies Finger</td>
+          <td>Byand</td>
+        </tr>
+        <tr>
+          <td>Spinach</td>
+          <td>Bhajji</td>
+        </tr>
+        <tr>
+          <td>Potato</td>
+          <td>Batato</td>
+        </tr>
+        <tr>
+          <td>Capsicum</td>
+          <td>Donne Mirsaang</td>
+        </tr>
+        <tr>
+          <td>Brinjal</td>
+          <td>guula</td>
+        </tr>
+        <tr>
+          <td>Carrot</td>
+          <td>Carrot</td>
+        </tr>
+        <tr>
+          <td>Green Chilli</td>
+          <td>Pachvi Mirsaang</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

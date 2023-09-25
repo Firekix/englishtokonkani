@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <title>Speech-to-speech Translation</title>
+<style>
+      body {
+        font-family: "Montserrat";
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-image: url("static/back.png");
+        background-size: cover;
+        background-position: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        height: 70vh;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+        color: #555;
+      }
+      input[type="text"] {
+        width: 70vw;
+        padding: 20px;
+        font-size: 24px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .btn {
+        background-color: #45d050;
+        color: #fff;
+        padding: 16px 40px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px;
+      }
+      .btn:hover {
+        background-color: #45a049;
+      }
+      .hidden {
+        display: none;
+      }
+      .back-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        background: rgb(100, 100, 242);
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    </style>
+   </head>
+   <body>
+        <a class="back-btn" href="{{ url_for('get_started') }}">Back</a>
+      <form action="{{ url_for('translate') }}" method="POST">
+         <input type="text" id="english_speech" name="english_speech" placeholder="Enter the words or Press Mic">
+         <img src="static/mic.png" onclick="startDictation()" width="50" height="50">
+         <br><br>
+         <button type="submit" value="Translate" class="btn">Translate</button>
+
+      </form>
+      <button value="Download" class="btn" onclick="downloadAudio()">Download</button>
+
+      <div id="speech">
+         <textarea id="transcript" class="hidden"></textarea>
+      </div>
+
+      <script>
+         function startDictation() {
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+               var recognition = new webkitSpeechRecognition();
+
+               recognition.continuous = false;
+               recognition.interimResults = false;
+
+               recognition.lang = "en-US";
+               recognition.start();
+
+               recognition.onresult = function(e) {
+                  document.getElementById('english_speech').value = e.results[0][0].transcript;
+                  recognition.stop();
+               };
+
+               recognition.onerror = function(e) {
+                  recognition.stop();
+               }
+            }
+         }
+
+
+
+     function downloadAudio() {
+            var audioUrl = "{{ url_for('static', filename='captured_voicenew.mp3') }}";
+            var link = document.createElement('a');
+            link.href = audioUrl;
+            link.download = 'captured_voicenew.mp3';
+            document.body.appendChild(link);
+            link.click();
+         }
+
+      </script>
+   </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+   body {
+
+        font-family: "Montserrat", sans-serif;
+
+      }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      background: #7cd882;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .link-row {
+      display: flex;
+      width: 60vw;
+      flex-wrap: wrap;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      justify-content: space-around;
+      margin-bottom: 4rem;
+    }
+
+    .btn {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 3rem;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+     .back-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        background: rgb(100, 100, 242);
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+    .btn:hover {
+      background-color: #333;
+      color: yellow;
+    }
+  </style>
+  <body>
+    <div class="container">
+    <a class="back-btn" href="{{ url_for('get_started') }}">Back</a>
+      <div class="link-row">
+        <a href="{{ url_for('Days') }}" class="btn">Days</a>
+        <a href="{{ url_for('Colors') }}" class="btn">Colors</a>
+        <a href="{{ url_for('Fruits') }}" class="btn">Fruits</a>
+      </div>
+      <div class="link-row">
+        <a href="{{ url_for('Vegetables') }}" class="btn">Vegetables</a>
+        <a href="{{ url_for('Parts') }}" class="btn">Parts of Body</a>
+        <a href="{{ url_for('Family') }}" class="btn">Family relations</a>
+      </div>
+    </div>
+  </body>
+</html>

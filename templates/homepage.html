@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+      <title>Speech-to-Speech Translation</title>
+      <style>
+         body {
+            background-color: #f5f5f5;
+            font-family: 'Montserrat', sans-serif; /* change font to Montserrat */
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+         }
+         .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+         .right-column {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px; /* add rounded corners to the image */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* add a shadow effect to the image */
+            background: linear-gradient(45deg, #7bc043, #6a9e37); /* add a gradient border to the image */
+         }
+         h1 {
+            font-size: 4rem;
+            font-weight: 400; /* make the font weight thinner */
+            margin-bottom: 2rem;
+         }
+         a.btn {
+            background-color: #7bc043;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            margin-right: 1rem; /* add margin to separate the buttons */
+         }
+         a.btn:hover {
+            background-color: #6a9e37;
+         }
+         img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* add rounded corners to the image */
+         }
+      </style>
+   </head>
+   <body>
+      <div class="left-column">
+         <h1>English to Konkani Translator</h1>
+         <a href="{{ url_for('get_started') }}" class="btn">Get Started</a> 
+         <br>
+         <a href="{{ url_for('about') }}" class="btn">About</a> <!-- add new button -->
+      </div>
+      <div class="right-column">
+         <img src="static/people.png" alt="Your Image">
+      </div>
+   </body>
+</html>

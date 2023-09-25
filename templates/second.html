@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Page</title>
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: "Montserrat", sans-serif;
+        color: #333;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      .left-column {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .right-column {
+        margin: 0 2rem;
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(45deg, #7bc043, #6a9e37);
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+      }
+      a.btn {
+        background-color: #7bc043;
+        color: #fff;
+        padding: 1rem 2.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        margin-right: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      a.btn:hover {
+        background-color: #6a9e37;
+      }
+      .img-container {
+        display: block;
+        width: 80%;
+        height: 80%;
+      }
+      img {
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+      }
+      .back-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        background: rgb(100, 100, 242);
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+      <a class="back-btn" href="{{ url_for('Home') }}">Back</a>
+    <div class="left-column">
+      <h1>Let's Start</h1>
+      <a href="{{ url_for('Dictionary') }}" class="btn">Dictionary</a>
+      <a href="{{ url_for('Trans') }}" class="btn">Translator</a>
+    </div>
+
+    <div class="right-column">
+      <div class="img-container">
+        <img src="static/lang.png" alt="Your Image" />
+      </div>
+    </div>
+  </body>
+</html>
