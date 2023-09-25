@@ -10,7 +10,7 @@ from grammar_correction import correct_sentence
 def translate_speech(english_speech):
 
     d = {}
-    with open('/home/chaithanyakumar/mysite/trial.csv', mode='r', encoding="utf8") as f:
+    with open('trial.csv', mode='r', encoding="utf8") as f:
         data = csv.reader(f)
         d = {rows[0]:rows[1:] for rows in data}
     recog1 = spr.Recognizer()
